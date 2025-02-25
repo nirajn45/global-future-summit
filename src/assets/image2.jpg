@@ -1,0 +1,4 @@
+// Placeholder image content
+````
+
+You can use any image editing tool to create a simple placeholder image and save it as `image2.jpg` in the specified directory. This will resolve the import error in your `Gallery.jsx` file.
