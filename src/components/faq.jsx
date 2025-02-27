@@ -48,7 +48,7 @@ const FaqItem = ({ faq }) => {
 			<div
 				className={`${
 					isOpen ? "block" : "hidden"
-				} p-4 lg:p-6 bg-white shadow-black dark:shadow-none dark:bg-white rounded-xl`}
+				} p-4 lg:p-6 bg-white shadow-black dark:shadow-none border-b border-black dark:bg-white `}
 			>
 				<p className="opacity-50">{faq.answer}</p>
 			</div>
@@ -66,10 +66,10 @@ const Faq8 = () => {
 			<div className="container px-16 md:px-8 lg:px-28">
 				<div className="grid grid-cols-12 justify-between gap-6">
 					<div className="col-span-12 md:col-span-5">
-						<h2 className="font-bold text-[25px] md:text-[45px] leading-none mb-6">
-							FAQ
-						</h2>
-						<p className="text-lg opacity-70">
+					<span className="text-transparent text-4xl font-bold bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
+            FAQS
+            </span>
+						<p className=" text-1xl.5 opacity-70">
 							Assumenda non repellendus distinctio nihil dicta sapiente,
 							quibusdam maiores, illum at, aliquid blanditiis eligendi
 							qui.Assumenda non repellendus distinctio nihil dicta sapiente,

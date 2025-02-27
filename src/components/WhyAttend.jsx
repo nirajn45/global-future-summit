@@ -7,13 +7,13 @@ const WhyAttend = () => {
     <section className="bg-gradient-to-b min-w-screen from-blue-50 to-white py-16 px-4 md:px-16 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Why Attend{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
             Global Future Summit 2.O?
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-1xl.5 text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Be part of a system that values your hard work and ensures fair pay, dignity, 
             and opportunity for growth.
           </p>
@@ -32,10 +32,10 @@ const WhyAttend = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#025067]transition-colors duration-300">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2 group-hover:text-[#025067]transition-colors duration-300">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 text-1xl.5 leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>

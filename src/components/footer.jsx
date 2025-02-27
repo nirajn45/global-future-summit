@@ -14,13 +14,13 @@ const Footer = ({ logo }) => {
         <div className="flex-1 flex justify-center space-x-6">
   <a 
     href="/register" 
-    className="p-6 bg-white rounded-lg hover:text-[#BA2027] text-black px-6 py-2 text-sm font-normal"
+    className="p-6 bg-white rounded-lg hover:text-[#BA2027] text-black text-1xl.5 px-6 py-2 text-sm font-normal"
   >
     Register
   </a>
   <a 
     href="/register" 
-    className="p-6 bg-white rounded-lg hover:text-[#BA2027] text-black px-6 py-2 text-sm font-normal"
+    className="p-6 bg-white rounded-lg hover:text-[#BA2027] text-black text-1xl.5 px-6 py-2 text-sm font-normal"
   >
     Meet unexpected opportunities
   </a>
@@ -46,9 +46,9 @@ const Footer = ({ logo }) => {
       </div>
 
       {/* Bottom Footer Text */}
-      <div className="bg-[#15a0c8] text-white py-4">
+      <div className="bg-[#025067] text-white py-4">
         <div className="container mx-auto flex flex-col items-center">
-          <p className="text-sm text-white">@ The Uniques Community</p>
+          <p className="text-sm text-white text-1xl.5">@ Global Future Summit</p>
         </div>
       </div>
     </footer>
