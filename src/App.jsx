@@ -1,30 +1,20 @@
-<<<<<<< HEAD
 import Navbar from "./components/Navbar"
 import HeroSection from "./components/heroSection";
 import WhyAttend from "./components/WhyAttend";
+import CollaboratorsSection from "./components/logosPart";
+import Footer from "./components/footer";
+import Portfolio2 from "./components/Gallery";
+import Faq8 from "./components/faq";
 function App() {
   return (
     <div className="font-[poppins] bg-white min-h-screen flex flex-col items-center justify-center">
       <Navbar />
       <HeroSection />
       <WhyAttend />
-=======
-import HeroSection from "./components/heroSection";
-
-import Gallery from "./components/Gallery";
-
-
-import CompanyLogos from "./components/sumit";
-
-function App() {
-  return (
-    <div className="bg-black min-h-screen flex flex-col items-center justify-center">
-      <HeroSection />
-      <CompanyLogos/>
-      <Gallery />
-
-
->>>>>>> 17c3e40e01d1cae7e0f18fba7e02672808f72f95
+      <CollaboratorsSection/>
+      <Portfolio2/>
+      <Faq8/>
+      <Footer/>
     </div>
     
   );

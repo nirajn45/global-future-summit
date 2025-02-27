@@ -1,0 +1,14 @@
+@media (min-width: 767px) {
+	.ezy__clients14-list [class*="col-"] {
+		border-bottom: 1px solid #e8e8e8;
+		border-left: 1px solid #e8e8e8;
+	}
+
+	.ezy__clients14-list [class*="col-"]:nth-child(4n + 1) {
+		border-left-color: transparent;
+	}
+
+	.ezy__clients14-list [class*="col-"]:nth-last-child(-n + 4) {
+		border-bottom-color: transparent;
+	}
+}
