@@ -35,7 +35,7 @@ const Navbar = () => {
                                 { label: 'Home', href: '#home' },
                                 { label: 'About', href: '#about' },
                                 { label: 'Objective', href: '#objective' },
-                                { label: 'Focus Area', href: '#focus-area' },
+                                { label: 'Speakers', href: '#speakers' },
                                 { label: 'Contact Us', href: '#contact' }
                             ].map((item, index) => (
                                 <li key={index} className="cursor-pointer relative group">

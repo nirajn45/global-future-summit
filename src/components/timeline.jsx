@@ -6,35 +6,36 @@ const Timeline = () => {
       id: "01",
       title: "Inauguration",
       description:
-        "10:00 AM - 11:00 AM",
+        "10:00 AM - 11:00 AM ",
       align: "left",
     },
     {
       id: "02",
       title: "Industrialist Discussion ",
       description:
-        "11:00 AM - 12:00 PM",
+        "11:00 AM - 12:00 PM ",
       align: "right",
     },
     {
       id: "03",
       title: "Top 5 teams presentation",
       description:
-        "12:00 PM - 01:00 PM",
+        "12:00 PM - 01:00 PM  ",
       align: "left",
     },
+
     {
         id: "04",
         title: "HR Panel Discussion ",
         description:
-          "01:00 PM - 02:00 PM",
+          "01:00 PM - 02:00 PM ",
         align: "right",
       }
   ];
 
   return (
     <div className="max-w-3xl mt-20 mb-40 mx-auto p-4 w-full text-center">
-      <h2 className="text-4xl font-semibold mb-8">Time<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
+      <h2 className="text-6xl font-semibold mb-8">Time<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
             Line
             </span></h2> 
       <div className="relative">

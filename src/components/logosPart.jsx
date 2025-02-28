@@ -41,7 +41,7 @@ const ClientLogo8 = () => {
       <div className="w-full px-4">
         <div className="grid grid-cols-12 justify-center mb-16">
           <div className="col-span-12 lg:col-span-6 lg:col-start-4 text-center">
-            <h2 className="font-bold text-4xl lg:text-[35px] leading-none mb-6">
+            <h2 className="font-bold text-6xl lg:text-6xl leading-none mb-6">
               Meet Our<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
             Community Partners
             </span>

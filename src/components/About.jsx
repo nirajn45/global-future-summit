@@ -2,7 +2,7 @@ import newImage from "../assets/new.jpg"; // Single image
 
 function AboutUs() {
   return (
-    <section id="about" className="py-16 px-4">
+    <section id="about" className="py-16 mt-20 mb-10 px-4">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
         
         {/* Left Side - Single Image */}

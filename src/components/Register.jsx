@@ -46,6 +46,7 @@ const RegisterForm = () => {
           <option value="industrial_lead">Industrial Lead</option>
           <option value="hr_panelist">HR Panelist</option>
           <option value="industrial_panelist">Industrial Panelist</option>
+          <option value="Participant">Participant</option>
         </select>
       </div>
       <div className="mb-6">

@@ -5,8 +5,10 @@ import CollaboratorsSection from "./components/logosPart";
 import Footer from "./components/footer";
 import ImageGrid from "./components/Gallery";
 import Faq8 from "./components/faq";
+import TUC from "./components/TUCommunity"
 import AboutUs from "./components/About";
 import Timeline from "./components/timeline";
+import SpeakersCarousel from "./components/speakers";
 
 import RegisterPage from "./components/Register";
 function App() {
@@ -18,6 +20,9 @@ function App() {
       <Timeline/>
       <WhyAttend />
       <CollaboratorsSection/>
+      <SpeakersCarousel/>
+     
+      <TUC/>
       <ImageGrid/>
       <RegisterPage/>
       <Faq8/>
