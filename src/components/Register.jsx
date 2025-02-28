@@ -105,7 +105,7 @@ const RegisterPage = () => {
             <div className="w-full max-w-md h-auto flex items-center">
               <div className="w-full">
                 <h2 className="text-black text-3xl font-bold mb-6 text-center">
-                <h2 className="text-4xl font-bold">Glimpses of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
+                <h2 className="text-4xl font-bold"><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
             Register
             </span></h2> Your Account
                 </h2>

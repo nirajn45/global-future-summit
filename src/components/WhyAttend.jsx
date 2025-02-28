@@ -4,8 +4,39 @@ import { CheckCircle } from "lucide-react";
 
 const WhyAttend = () => {
   return (
-    <section className="bg-gradient-to-b min-w-screen from-blue-50 to-white py-16 px-4 md:px-16 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section  id="objective" className="bg-gradient-to-b min-w-screen from-blue-50 to-white py-16 px-4 md:px-16 overflow-hidden relative" a12>
+      {/* Earth Vector Background */}
+      <div className="absolute inset-0 opacity-15 overflow-hidden pointer-events-none">
+        {/* Main Earth Grid */}
+        <div className="absolute w-full h-full">
+          <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+            {/* Earth Grid */}
+            <circle cx="400" cy="400" r="300" fill="none" stroke="#0B7798" strokeWidth="1.5" strokeDasharray="5,5" />
+            <circle cx="400" cy="400" r="250" fill="none" stroke="#0B7798" strokeWidth="1" />
+            <ellipse cx="400" cy="400" rx="300" ry="150" fill="none" stroke="#0B7798" strokeWidth="1" />
+            <ellipse cx="400" cy="400" rx="300" ry="150" fill="none" stroke="#0B7798" strokeWidth="1" transform="rotate(30 400 400)" />
+            <ellipse cx="400" cy="400" rx="300" ry="150" fill="none" stroke="#0B7798" strokeWidth="1" transform="rotate(60 400 400)" />
+            <ellipse cx="400" cy="400" rx="300" ry="150" fill="none" stroke="#0B7798" strokeWidth="1" transform="rotate(90 400 400)" />
+            <ellipse cx="400" cy="400" rx="300" ry="150" fill="none" stroke="#0B7798" strokeWidth="1" transform="rotate(120 400 400)" />
+            <ellipse cx="400" cy="400" rx="300" ry="150" fill="none" stroke="#0B7798" strokeWidth="1" transform="rotate(150 400 400)" />
+            
+            {/* Connection Points */}
+            <circle cx="550" cy="250" r="5" fill="#16a3cc" />
+            <circle cx="250" cy="550" r="5" fill="#16a3cc" />
+            <circle cx="650" cy="400" r="5" fill="#16a3cc" />
+            <circle cx="150" cy="400" r="5" fill="#16a3cc" />
+            <circle cx="400" cy="150" r="5" fill="#16a3cc" />
+            <circle cx="400" cy="650" r="5" fill="#16a3cc" />
+            
+            {/* Connection Lines */}
+            <path d="M550,250 L650,400" stroke="#16a3cc" strokeWidth="1.5" strokeDasharray="5,3" />
+            <path d="M250,550 L150,400" stroke="#16a3cc" strokeWidth="1.5" strokeDasharray="5,3" />
+            <path d="M400,150 L550,250" stroke="#16a3cc" strokeWidth="1.5" strokeDasharray="5,3" />
+            <path d="M400,650 L250,550" stroke="#16a3cc" strokeWidth="1.5" strokeDasharray="5,3" />
+          </svg>
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Why Attend{" "}
@@ -44,8 +75,6 @@ const WhyAttend = () => {
             </div>
           ))}
         </div>
-
-        
       </div>
     </section>
   );
