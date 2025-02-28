@@ -50,9 +50,12 @@ const HeroSection = () => {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#025067]/30" />
 
+      {/* Main Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
-        <div className={`space-y-8 ${fadeInUp}`}>
+        <div className={`${fadeInUp} space-y-8`}>
+          {/* Intro Banner */}
           <div className="inline-block px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm">
+            🌐Building a Better Future, Today
             🌐Building a Better Future, Today
           </div>
 
@@ -82,12 +85,14 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-8 h-12 rounded-full border-2 border-white p-1 flex items-center justify-center">
           <div className="w-1 h-3 bg-white rounded-full animate-scroll" />
         </div>
       </div>
 
+      {/* Scroll Animation Keyframes */}
       <style jsx>{`
         @keyframes scroll {
           0% {
