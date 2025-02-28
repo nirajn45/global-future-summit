@@ -1,0 +1,76 @@
+@keyframes moving-border {
+    0% {
+      background: conic-gradient(
+        from 0deg,
+        #00ffff 0deg,
+        #025067 90deg,
+        transparent 180deg,
+        transparent 360deg
+      );
+    }
+    25% {
+      background: conic-gradient(
+        from 90deg,
+        #00ffff 0deg,
+        #025067 90deg,
+        transparent 180deg,
+        transparent 360deg
+      );
+    }
+    50% {
+      background: conic-gradient(
+        from 180deg,
+        #00ffff 0deg,
+        #025067 90deg,
+        transparent 180deg,
+        transparent 360deg
+      );
+    }
+    75% {
+      background: conic-gradient(
+        from 270deg,
+        #00ffff 0deg,
+        #025067 90deg,
+        transparent 180deg,
+        transparent 360deg
+      );
+    }
+    100% {
+      background: conic-gradient(
+        from 360deg,
+        #00ffff 0deg,
+        #025067 90deg,
+        transparent 180deg,
+        transparent 360deg
+      );
+    }
+  }
+  
+  ul {
+    position: relative;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 50px;
+    z-index: 1;
+  }
+  
+  ul::before {
+    content: "";
+    position: absolute;
+    inset: -3px; /* Controls the border thickness */
+    border-radius: inherit;
+    padding: 3px;
+    background: conic-gradient(
+      from 0deg,
+      #00ffff 0deg,
+      #025067 90deg,
+      transparent 180deg,
+      transparent 360deg
+    );
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    -webkit-mask-composite: xor;
+    animation: moving-border 1s infinite linear;
+    z-index: -1;
+  }

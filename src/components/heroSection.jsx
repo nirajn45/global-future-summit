@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"; 
 import videoSrc from "../assets/WhatsApp Video 2025-02-24 at 10.21.46_da7bb4ac.mp4";
 
 const HeroSection = () => {
@@ -34,19 +34,19 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const fadeInUp = `opacity-0 translate-y-10 ${
-    isVisible ? "opacity-100 translate-y-0" : ""
-  } transition-all duration-1000 ease-out`;
+  const fadeInUp = `
+    opacity-0 translate-y-10
+    ${isVisible ? "opacity-100 translate-y-0" : ""}
+    transition-all duration-1000 ease-out
+  `;
 
   return (
     <section className="relative min-h-screen min-w-screen flex items-center justify-center bg-black overflow-hidden">
-      {/* Background Video */}
       <video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted playsInline>
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#025067]/30" />
 
       {/* Main Content */}
@@ -55,9 +55,9 @@ const HeroSection = () => {
           {/* Intro Banner */}
           <div className="inline-block px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm">
             🌐Building a Better Future, Today
+            🌐Building a Better Future, Today
           </div>
 
-          {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl text-center md:text-left lg:ml-28 lg:text-7xl font-bold text-white">
             Welcome to <br />
             <span className="text-transparent bg-clip-text bg-white">
@@ -65,7 +65,6 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          {/* Description */}
           <p className="text-lg md:text-xl text-center md:text-left lg:ml-28 text-gray-300 max-w-3xl mx-auto md:mx-0 leading-relaxed">
             Explore groundbreaking innovations and emerging technologies driving the future of industries and society!
           </p>
