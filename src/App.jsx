@@ -3,10 +3,12 @@ import HeroSection from "./components/heroSection";
 import WhyAttend from "./components/WhyAttend";
 import CollaboratorsSection from "./components/logosPart";
 import Footer from "./components/footer";
-import Gallery from "./components/Gallery";
+import ImageGrid from "./components/Gallery";
 import Faq8 from "./components/faq";
 import AboutUs from "./components/About";
 import Timeline from "./components/timeline";
+
+import RegisterPage from "./components/Register";
 function App() {
   return (
     <div className="font-[poppins] bg-white min-h-screen flex flex-col items-center justify-center">
@@ -16,7 +18,8 @@ function App() {
       <Timeline/>
       <WhyAttend />
       <CollaboratorsSection/>
-      <Gallery/>
+      <ImageGrid/>
+      <RegisterPage/>
       <Faq8/>
       <Footer/>
     </div>

@@ -1,72 +1,81 @@
 import React from "react";
 
 const images = [
-  {
-    src: "https://img.freepik.com/premium-photo/cheerful-team-students-passed-exam_952516-105.jpg",
-    title: "Image 1",
-    description: "This is the first image description.",
-    hoverColor: "bg-red-500",
-  },
-  {
-    src: "https://img.freepik.com/premium-photo/cheerful-team-students-passed-exam_952516-105.jpg",
-    title: "Image 2",
-    description: "This is the second image description.",
-    hoverColor: "bg-blue-500",
-  },
-  {
-    src: "https://img.freepik.com/premium-photo/cheerful-team-students-passed-exam_952516-105.jpg",
-    title: "Image 3",
-    description: "This is the third image description.",
-    hoverColor: "bg-green-500",
-  },
-  {
-    src: "https://img.freepik.com/premium-photo/cheerful-team-students-passed-exam_952516-105.jpg",
-    title: "Image 4",
-    description: "This is the fourth image description.",
-    hoverColor: "bg-yellow-500",
-  },
+    "/src/assets/27.JPG",
+    "/src/assets/32.jpg",
+    "/src/assets/IMG_1412.jpg",
+    "/src/assets/IMG_1482.jpg",
+    "/src/assets/IMG_1531.jpg",
+    "/src/assets/IMG_1704.jpg",
 ];
 
-const Gallery = () => {
+const ImageGrid = () => {
   return (
-    <div className="w-screen">
-      {/* Heading Section */}
-      <div className="text-center mb-6">
-        <h2 className="text-4xl font-bold">Glimpses of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
-            Last Year
-            </span></h2>
-        <p className="text-gray-600 text-lg">
-          Showing you the glimpses of the last year's Global Summit Event
+    <div className="w-screen h-screen mt-30 mb-20 flex flex-col items-center justify-center bg-white p-6">
+      
+      {/* Header Section */}
+      <div className="text-center mb-8">
+        <h1 className="text-transparent text-4xl font-bold bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
+          Gallery
+        </h1>
+        <p className="text-gray-600 text-lg mt-2 max-w-2xl">
+          Explore our collection of stunning images capturing special moments and beautiful scenes.
         </p>
       </div>
 
-      {/* Gallery Section */}
-      <div className="bg-[#025067] py-8">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 px-4">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="relative group overflow-hidden rounded-lg shadow-lg"
-            >
-              <img
-                src={image.src}
-                alt={image.title}
-                className="w-full h-auto object-cover"
-              />
-              <div
-                className={`absolute inset-0 ${image.hoverColor} bg-opacity-90 flex flex-col justify-center items-center opacity-0 translate-y-[-100%] group-hover:opacity-88 group-hover:translate-y-0 transition-all duration-300`}
-              >
-                <h3 className="text-white text-lg font-bold">{image.title}</h3>
-                <p className="text-white text-sm text-center">{image.description}</p>
-              </div>
-            </div>
-          ))}
+      {/* Image Grid */}
+      <div className="grid grid-cols-3 gap-4 max-w-6xl mx-auto h-screen">
+        <div className="col-span-1 row-span-1 overflow-hidden rounded-lg relative group">
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300 z-10"></div>
+          <img 
+            src={images[0]} 
+            alt="Image 1" 
+            className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-105" 
+          />
+        </div>
+        <div className="col-span-1 row-span-1 overflow-hidden rounded-lg relative group">
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300 z-10"></div>
+          <img 
+            src={images[1]} 
+            alt="Image 2" 
+            className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-105" 
+          />
+        </div>
+        <div className="col-span-1 row-span-2 overflow-hidden rounded-lg relative group">
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300 z-10"></div>
+          <img 
+            src={images[2]} 
+            alt="Image 3" 
+            className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-105" 
+          />
+        </div>
+        <div className="col-span-2 row-span-1 overflow-hidden rounded-lg relative group">
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300 z-10"></div>
+          <img 
+            src={images[3]} 
+            alt="Image 4" 
+            className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-105" 
+          />
+        </div>
+        <div className="col-span-1 row-span-1 overflow-hidden rounded-lg relative group">
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300 z-10"></div>
+          <img 
+            src={images[4]} 
+            alt="Image 5" 
+            className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-105" 
+          />
+        </div>
+        <div className="col-span-2 row-span-1 overflow-hidden rounded-lg relative group">
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300 z-10"></div>
+          <img 
+            src={images[5]} 
+            alt="Image 6" 
+            className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-105" 
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default Gallery;
-
-
+export default ImageGrid;
