@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import imgg from '../assets/glob.png';
 
-export default () => {
+const Navbar=() => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -92,3 +92,5 @@ export default () => {
         </>
     );
 };
+
+export default Navbar;

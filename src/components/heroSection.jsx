@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"; 
-import Navbar from "./Navbar";
 import videoSrc from "../assets/WhatsApp Video 2025-02-24 at 10.21.46_da7bb4ac.mp4";
 
 const HeroSection = () => {

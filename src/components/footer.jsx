@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultLogo from '../assets/global-summit-logo-png[2].png'; // Import default logo
+import defaultLogo from '../assets/glob.png'; // Import default logo
 
 const Footer = ({ logo }) => {
   return (

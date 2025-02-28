@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar"
+import Navbar from "./components/NavBar";
 import HeroSection from "./components/heroSection";
 import WhyAttend from "./components/WhyAttend";
 import CollaboratorsSection from "./components/logosPart";
