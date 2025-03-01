@@ -40,15 +40,15 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { path: "/", element: <Gfs /> },
-      { path: "/register-global-futures-summit", element: <>Coming Soon</> }
+      { path: "", element: <Gfs /> }, // Default home page ("/")
+      { path: "register-global-futures-summit", element: <>Coming Soon</> }
     ],
   },
   {
     path: "/ideate",
     element: <Layout2 />,
     children: [
-      { path: "", element: <Ideate /> }, // `path: ""` will correctly load Ideate inside `/ideate`
+      { index: true, element: <Ideate /> }, // ✅ Correct way to load `/ideate`
     ],
   },
   { path: "/register", element: <RegistrationForm /> },
