@@ -22,7 +22,7 @@ const WhyAttend = () => {
             </span>
             </h2>
             <p className="text-lg leading-8 mb-2">
-            🌍 Global Future Summit – A hub for innovation!  Connect with industry leaders, engage in panel discussions, and compete in an exciting Ideathon. Shape the future! </p>
+            Global Future Summit – A hub for innovation!  Connect with industry leaders, engage in panel discussions, and compete in an exciting Ideathon. Shape the future! </p>
           </div>
         </div>
 
@@ -45,7 +45,7 @@ const WhyAttend = () => {
                     Build Connections Globally
                   </h5>
                   <p>
-                  🌍 Build Connections Globally – Network with industry leaders, HR experts, and innovators from around the world.
+                  Build Connections Globally – Network with industry leaders, HR experts, and innovators from around the world.
                   </p>
                
                  
@@ -78,7 +78,7 @@ const WhyAttend = () => {
                 Career Growth
               </h3>
               <p>
-              📈 Career Growth – Explore new opportunities, get industry exposure, and accelerate your professional journey.
+              Career Growth – Explore new opportunities, get industry exposure, and accelerate your professional journey.
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@ const WhyAttend = () => {
                   <h3 className="font-medium capitalize mb-4 text-xl">
                     Present your Idea
                   </h3>
-                  <p>💡 Present Your Idea – Showcase your innovation in the Ideathon and turn your vision into reality.</p>
+                  <p>Present Your Idea – Showcase your innovation in the Ideathon and turn your vision into reality.</p>
                 </div>
               </div>
             </div>

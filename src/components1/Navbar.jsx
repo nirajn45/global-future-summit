@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
 import { Menu, X } from 'lucide-react';
 import imgg from '../assets/glob.png';
 
@@ -30,17 +31,24 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden lg:flex items-center">
-                        <ul className={`flex space-x-6 xl:space-x-12 px-4 xl:px-10 font-medium text-[16px] py-3 rounded-full ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
+                        <ul className={`flex space-x-6 xl:space-x-12 px-4 xl:px-10 font-medium text-[17px] py-3 rounded-full ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
                             {[
-                                { label: 'Home', href: '#home' },
-                                { label: 'About', href: '#about' },
-                                { label: 'Objective', href: '#objective' },
-                                { label: 'Speakers', href: '#speakers' },
-                                { label: 'Contact Us', href: '#contact' }
+                                { label: 'Home', to: 'home' },
+                                { label: 'About', to: 'about' },
+                                { label: 'Benefits', to: 'objective' },
+                                { label: 'Speakers', to: 'speakers' },
+                                { label: 'Contact Us', to: 'contact' }
                             ].map((item, index) => (
-                                <li key={index} className="cursor-pointer relative group">
-                                    <a href={item.href}>{item.label}</a>
-                                    <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                                <li key={index} className="cursor-pointer">
+                                    <Link 
+                                        to={item.to} 
+                                        smooth={true} 
+                                        duration={500} 
+                                        offset={-70} 
+                                        className="cursor-pointer transition-colors duration-300 hover:text-[#025067]"
+                                    >
+                                        {item.label}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -61,13 +69,22 @@ const Navbar = () => {
                     <div className="flex flex-col py-4 px-6">
                         <ul className="flex flex-col space-y-4 font-medium text-[16px]">
                             {[
-                                { label: 'Home', href: '#home' },
-                                { label: 'About', href: '#about' },
-                                { label: 'Objective', href: '#objective' },
-                                { label: 'Contact Us', href: '#contact' }
+                                { label: 'Home', to: 'home' },
+                                { label: 'About', to: 'about' },
+                                { label: 'Objective', to: 'objective' },
+                                { label: 'Contact Us', to: 'contact' }
                             ].map((item, index) => (
                                 <li key={index}>
-                                    <a href={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}</a>
+                                    <Link 
+                                        to={item.to} 
+                                        smooth={true} 
+                                        duration={500} 
+                                        offset={-70} 
+                                        onClick={() => setIsMenuOpen(false)} 
+                                        className="cursor-pointer transition-colors duration-300 hover:text-[#025067]"
+                                    >
+                                        {item.label}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

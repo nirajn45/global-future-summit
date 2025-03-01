@@ -1,74 +1,123 @@
-import React from "react";
-import defaultLogo from "../assets/glob.png"; // Import default logo
+import React from 'react';
+import { 
+  Linkedin, 
+  Twitter, 
+  Instagram, 
+  ArrowRight, 
+  Calendar, 
+  MapPin 
+} from 'lucide-react';
+import imgg from '../assets/glob.png';
 
-const Footer = ({ logo }) => {
+const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font  shadow-lg shadow-black w-full">
-      <div className="container px-8 mx-auto flex flex-wrap items-center justify-center md:justify-between py-4">
-        {/* Logo */}
-        <a href="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <img src={logo || defaultLogo} alt="Logo" className="h-20" />
-        </a>
-
-        {/* Centered Register Button */}
-        <div className="flex flex-wrap justify-center md:justify-center space-x-4 md:space-x-6 mb-4 md:mb-0">
-          <a
-            href="/register"
-            className="p-4 bg-white rounded-lg hover:text-[#BA2027] text-black text-lg px-6 py-2 font-normal text-center"
-          >
-            Register
-          </a>
-          <a
-            href="/register"
-            className="p-4 bg-white rounded-lg hover:text-[#BA2027] text-black text-lg px-6 py-2 font-normal text-center"
-          >
-            Meet Unexpected Opportunities
-          </a>
-        </div>
-
-        {/* Social Icons */}
-        <span className="inline-flex flex-wrap justify-center md:justify-end space-x-4">
-          <a
-            href="https://www.instagram.com/theuniquesofficial?igsh=MWZ2aTV4bm0yNGliYw=="
-            className="text-gray-500 hover:text-[#BA2027]"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-            </svg>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/theuniquesofflicial/"
-            className="text-gray-500 hover:text-[#BA2027]"
-          >
-            <svg
-              fill="currentColor"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="0"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-              <circle cx="4" cy="4" r="2" stroke="none"></circle>
-            </svg>
-          </a>
-        </span>
+    <footer className="bg-white relative overflow-hidden ">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-24 -left-24 w-48 h-48 rounded-full bg-[#025067] opacity-5 animate-pulse"></div>
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-[#025067] opacity-5 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-32 h-32 rounded-full bg-[#025067] opacity-5 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -bottom-16 -right-16 w-56 h-56 rounded-full bg-[#025067] opacity-5 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
-      {/* Bottom Footer Text */}
-      <div className="bg-[#025067] text-white py-4">
-        <div className="container mx-auto flex flex-col items-center">
-          <p className="text-sm text-white text-center">@ Global Future Summit</p>
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Centered Logo */}
+        {/* <div className="flex justify-center mb-8">
+          <img 
+            src={imgg} 
+            alt="FutureSummit Logo" 
+            className="h-16 object-contain"
+          />
+        </div> */}
+
+        {/* Footer Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+          
+          {/* Column 1: About */}
+          <div className="space-y-6">
+          <img 
+            src={imgg} 
+            alt="FutureSummit Logo" 
+            className="h-40 object-contain"
+          />
+            <p className="text-gray-600 mt-[-80px]">
+              Join the world's leading tech innovators and visionaries at our annual professional summit, where the future is shaped today.
+            </p>
+            <div className="flex justify-center md:justify-start space-x-4">
+              <a href="#" className="text-[#025067] hover:text-[#02374a] transition-colors duration-300">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-[#025067] hover:text-[#02374a] transition-colors duration-300">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-[#025067] hover:text-[#02374a] transition-colors duration-300">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Column 2: Event Details */}
+          <div className="space-y-6 mt-12">
+            <h3 className="text-lg font-semibold text-[#025067]">Event Details</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center justify-center md:justify-start">
+                <Calendar className="w-5 h-5 text-[#025067] mr-3 flex-shrink-0" />
+                <div>
+                  <p className="font-medium">June 15-17, 2025</p>
+                  <p className="text-sm text-gray-500">9:00 AM - 6:00 PM</p>
+                </div>
+              </li>
+              <li className="flex items-center justify-center md:justify-start">
+                <MapPin className="w-5 h-5 text-[#025067] mr-3 flex-shrink-0" />
+                <div>
+                  <p className="font-medium">Tech Innovation Center</p>
+                  <p className="text-sm text-gray-500">123 Future Avenue, San Francisco, CA</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Newsletter */}
+          <div className="space-y-6 mt-12">
+            <h3 className="text-lg font-semibold text-[#025067]">Stay Updated</h3>
+            <p className="text-gray-600">Subscribe to our newsletter for the latest updates and exclusive offers.</p>
+            <form className="space-y-3">
+              <div className="relative group">
+                <input 
+                  type="email" 
+                  placeholder="Your email address" 
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#025067] focus:border-transparent transition-all duration-300"
+                />
+                <button 
+                  type="submit" 
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#025067] text-white p-1 rounded-md hover:bg-[#02374a] transition-colors duration-300"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+              <p className="text-xs text-gray-500">We respect your privacy and will never share your information.</p>
+            </form>
+          </div>
+        </div>
+
+        {/* Divider with animated gradient */}
+        <div className="mt-12 mb-8 relative">
+          <div className="h-px bg-gradient-to-r from-transparent via-[#025067] to-transparent opacity-30"></div>
+          <div className="h-px w-1/3 bg-[#025067] opacity-70 absolute top-0 left-0 animate-gradient"></div>
+        </div>
+
+        {/* Bottom Footer */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-center">
+          <p className="text-gray-600 text-sm">
+            &copy; {new Date().getFullYear()} FutureSummit. All rights reserved.
+          </p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="text-gray-600 hover:text-[#025067] text-sm transition-colors duration-300">Privacy Policy</a>
+            <a href="#" className="text-gray-600 hover:text-[#025067] text-sm transition-colors duration-300">Terms of Service</a>
+            <a href="#" className="text-gray-600 hover:text-[#025067] text-sm transition-colors duration-300">Cookie Policy</a>
+          </div>
         </div>
       </div>
     </footer>

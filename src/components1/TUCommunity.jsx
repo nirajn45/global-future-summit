@@ -61,7 +61,7 @@ const ConsultingSection = () => {
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 mt-6 text-lg font-medium text-white bg-[#025067] rounded-xl shadow-lg hover:bg-red-700 transition"
           >
-            Learn More
+            Join Our Community
           </motion.a>
         </motion.div>
 

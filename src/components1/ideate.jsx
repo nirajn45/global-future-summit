@@ -97,7 +97,7 @@ const Section = () => {
               whileTap={{ scale: 0.98 }}
               className="inline-block"
             >
-              <div className="px-8 py-3 bg-blue-600 text-white font-medium rounded-full shadow-lg transition-all flex items-center gap-2">
+              <div className="px-8 py-3 bg-[#025067] text-white font-medium rounded-full shadow-lg transition-all flex items-center gap-2">
                 <span style={{ fontFamily: "'Google Sans', sans-serif" }}>Register Now</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

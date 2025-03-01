@@ -132,7 +132,7 @@ const speakersData = {
     {
       name: "Sarah Brown",
       title: "Tech Speaker, Google Devs",
-      photo: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/532957_v9_bc.jpg",
+      photo: "https://www.thestatesman.com/wp-content/uploads/2024/09/Untitled-design-2024-09-25T175741.839-jpg.webp",
       bio: "Passionate about making tech accessible to everyone",
       social: {
         linkedin: "#",
@@ -142,7 +142,7 @@ const speakersData = {
     {
       name: "Thomas Lee",
       title: "Android Developer, GDG",
-      photo: "https://upload.wikimedia.org/wikipedia/commons/1/16/Glasto24_28_300624_%28259_of_545%29_%2853838014719%29_%28cropped%29.jpg",
+      photo: "https://www.thestatesman.com/wp-content/uploads/2024/09/Untitled-design-2024-09-25T175741.839-jpg.webp",
       bio: "Building innovative mobile experiences",
       social: {
         linkedin: "#",
@@ -152,7 +152,7 @@ const speakersData = {
     {
       name: "Amanda Chen",
       title: "ML Engineer, Google",
-      photo: "https://hips.hearstapps.com/hmg-prod/images/singer-lana-del-rey-poses-for-a-portrait-during-a-visit-to-news-photo-1590067847.jpg",
+      photo: "https://www.thestatesman.com/wp-content/uploads/2024/09/Untitled-design-2024-09-25T175741.839-jpg.webp",
       bio: "Working on next-gen machine learning applications",
       social: {
         linkedin: "#",
@@ -162,7 +162,7 @@ const speakersData = {
     {
       name: "Kevin Park",
       title: "Cloud Architect, GDG Cloud",
-      photo: "https://m.media-amazon.com/images/M/MV5BYWYwYzYzMjUtNWE0MS00NmJlLTljNGMtNzliYjg5NzQ1OWY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      photo: "https://www.thestatesman.com/wp-content/uploads/2024/09/Untitled-design-2024-09-25T175741.839-jpg.webp",
       bio: "Expert in cloud infrastructure and DevOps",
       social: {
         linkedin: "#",
@@ -494,7 +494,7 @@ export default function SpeakersSection() {
                     <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-0.5 sm:mb-1 line-clamp-1">
                       {speaker.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 line-clamp-1">
+                    <p className="text-xs sm:text-sm text-[#025067] mb-1 sm:mb-2 line-clamp-1">
                       {speaker.title}
                     </p>
 
