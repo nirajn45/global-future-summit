@@ -31,7 +31,7 @@ const ScrollCircle = ({ progress }) => {
         damping: 20
       }}
     >
-      <div className="absolute inset-0 rounded-full animate-ping opacity-30" style={{ backgroundColor: "#025067" }}></div>
+      <div className="absolute inset-0 rounded-full animate-ping opacity-30 " style={{ backgroundColor: "#025067" }}></div>
     </motion.div>
   );
 };
@@ -67,7 +67,7 @@ function Timeline() {
     >
       <div className="max-w-5xl mx-auto relative">
         <motion.h1 
-          className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#0b7797] to-[#16a3cc] bg-clip-text text-transparent text-center mb-16"
+          className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#0b7797] to-[#16a3cc] bg-clip-text text-transparent text-center mb-20"
           style={{ color: "#025067" }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -10,7 +10,7 @@ import TimelineItem from "../components1/timeline"
 import SpeakersSection from "../components1/speakers";
 import Ideate from "../components1/ideate"
 
-function App() {
+function HomePage() {
   return (
     <div className="font-[poppins] bg-white min-h-screen w-full overflow-x-hidden flex flex-col items-center justify-center">
       <Navbar />
@@ -42,4 +42,4 @@ function App() {
     
  
 
-export default App;
+export default HomePage;

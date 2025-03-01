@@ -1,75 +1,193 @@
-import React from "react";
-import defaultLogo from "../assets/ideate.png"; // Import default logo
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { getDatabase, ref, set } from "firebase/database";
+import { app } from "../firebaseConfig";
+import ideateImage from "../assets/Ideate.jpg";
 
-const Footer = ({ logo }) => {
+const db = getDatabase(app);
+
+const RegistrationForm = () => {
+  const [formData, setFormData] = useState({
+    teamName: "",
+    teamLeader: "",
+    teamMembers: 1,
+    members: [""],
+    pptUrl: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleTeamMembersChange = (e) => {
+    const membersCount = parseInt(e.target.value, 10);
+    setFormData((prevData) => ({
+      ...prevData,
+      teamMembers: membersCount,
+      members: Array(membersCount).fill(""),
+    }));
+  };
+
+  const handleMemberChange = (index, value) => {
+    const updatedMembers = [...formData.members];
+    updatedMembers[index] = value;
+    setFormData((prevData) => ({
+      ...prevData,
+      members: updatedMembers,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.teamName) {
+      toast.error("Please enter your team name before submitting!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+      return;
+    }
+
+    try {
+      await set(ref(db, `participants/${formData.teamName}`), {
+        Team_Name: formData.teamName,
+        Team_Leader: formData.teamLeader,
+        Team_Count: formData.teamMembers,
+        Team_Members: formData.members,
+        PPT_URL: formData.pptUrl
+      });
+
+      toast.success("Registration successful!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+
+      // Reset form
+      setFormData({
+        teamName: "",
+        teamLeader: "",
+        teamMembers: 1,
+        members: [""],
+        pptUrl: "",
+      });
+
+    } catch (error) {
+      toast.error("Error saving data: " + error.message, {
+        position: "top-center",
+        autoClose: 3000,
+      });
+    }
+  };
+
   return (
-    <footer className="text-gray-600 body-font bg-gray-100 shadow-lg shadow-black w-full font-[Poppins]">
-      <div className="container px-8 mx-auto flex flex-nowrap items-center justify-between py-4">
-        {/* Logo and RSVP Button */}
-        <div className="flex items-center space-x-2 md:space-x-6">
-          {/* Logo */}
-          <a href="/" className="flex title-font font-medium items-center text-gray-900">
-            <img src={logo || defaultLogo} alt="Logo" className="w-24 md:w-32" />
-          </a>
-
-          {/* RSVP Button */}
-          <a
-            href="https://gdg.community.dev/events/details/google-gdg-on-campus-swami-vivekanand-institute-of-engineering-technology-chandigarh-india-presents-google-ideate-20-student-innovation-challenge-2025/" target="blank"
-            className="bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-sm md:text-lg px-4 py-2 md:px-6 md:py-2 font-normal text-center transition-all"
-          >
-            RSVP
-          </a>
-        </div>
-
-        {/* Social Icons */}
-        <div className="flex items-center space-x-2 md:space-x-4">
-          <a
-            href="https://www.instagram.com/theuniquesofficial?igsh=MWZ2aTV4bm0yNGliYw=="
-            className="text-gray-500 hover:text-[#BA2027]"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-4 h-4 md:w-5 md:h-5"
-              viewBox="0 0 24 24"
-            >
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-            </svg>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/theuniquesofflicial/"
-            className="text-gray-500 hover:text-[#BA2027]"
-          >
-            <svg
-              fill="currentColor"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="0"
-              className="w-4 h-4 md:w-5 md:h-5"
-              viewBox="0 0 24 24"
-            >
-              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-              <circle cx="4" cy="4" r="2" stroke="none"></circle>
-            </svg>
-          </a>
+    <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-br from-gray-900 to-black font-sans">
+      <ToastContainer />
+      
+      {/* Form Section */}
+      <div className="w-full md:w-1/2 p-6 flex items-center justify-center">
+        <div className="w-full max-w-md bg-black/30 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden border border-[#16a3cc]/20">
+          <div className="px-8 pt-8 pb-6">
+            <h2 className="text-3xl font-bold text-white mb-1">Register</h2>
+            <p className="text-[#16a3cc] mb-6">Please fill in your team details below</p>
+            
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <input
+                  type="text"
+                  name="teamName"
+                  placeholder="Team Name"
+                  value={formData.teamName}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-black/50 border border-[#0b7797]/50 rounded-lg p-3 text-white placeholder-[#16a3cc]/70 focus:outline-none focus:ring-2 focus:ring-[#16a3cc] transition duration-200"
+                />
+              </div>
+              
+              <div>
+                <input
+                  type="text"
+                  name="teamLeader"
+                  placeholder="Team Leader Name"
+                  value={formData.teamLeader}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-black/50 border border-[#0b7797]/50 rounded-lg p-3 text-white placeholder-[#16a3cc]/70 focus:outline-none focus:ring-2 focus:ring-[#16a3cc] transition duration-200"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-[#16a3cc] mb-2">Number of Team Members</label>
+                <select
+                  name="teamMembers"
+                  value={formData.teamMembers}
+                  onChange={handleTeamMembersChange}
+                  required
+                  className="w-full bg-black/50 border border-[#0b7797]/50 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16a3cc] transition duration-200"
+                >
+                  {[1, 2, 3, 4].map((num) => (
+                    <option key={num} value={num} className="bg-gray-900 text-white">
+                      {num}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              
+              {formData.members.map((member, index) => (
+                <div key={index}>
+                  <input
+                    type="text"
+                    placeholder={`Team Member ${index + 1} Name`}
+                    value={member}
+                    onChange={(e) => handleMemberChange(index, e.target.value)}
+                    required
+                    className="w-full bg-black/50 border border-[#0b7797]/50 rounded-lg p-3 text-white placeholder-[#16a3cc]/70 focus:outline-none focus:ring-2 focus:ring-[#16a3cc] transition duration-200"
+                  />
+                </div>
+              ))}
+              
+              <div>
+                <label className="block text-[#16a3cc] mb-2">PPT URL</label>
+                <input
+                  type="url"
+                  name="pptUrl"
+                  placeholder="Enter PPT URL"
+                  value={formData.pptUrl}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-black/50 border border-[#0b7797]/50 rounded-lg p-3 text-white placeholder-[#16a3cc]/70 focus:outline-none focus:ring-2 focus:ring-[#16a3cc] transition duration-200"
+                />
+              </div>
+              
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-[#0b7797] to-[#16a3cc] hover:from-[#16a3cc] hover:to-[#0b7797] text-white font-bold py-3 px-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"
+              >
+                Submit Registration
+              </button>
+            </form>
+          </div>
+          
+          <div className="bg-gradient-to-r from-[#0b7797] to-[#16a3cc] h-1 w-full"></div>
         </div>
       </div>
-
-      {/* Bottom Footer Text */}
-      <div className="bg-[#025067] text-white py-4">
-        <div className="container mx-auto flex flex-col items-center">
-          <p className="text-sm text-white text-center">
-            @ 2025, All rights reserved by The Uniques Community
-          </p>
+      
+      {/* Image Section */}
+      <div className="hidden md:block md:w-1/2 bg-black/40">
+        <div className="h-full w-full flex items-center justify-center p-6">
+          <img 
+            src={ideateImage} 
+            alt="Ideate" 
+            className="max-w-full max-h-full object-contain rounded-xl shadow-2xl transform -rotate-2 hover:rotate-0 transition duration-500"
+          />
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default RegistrationForm;

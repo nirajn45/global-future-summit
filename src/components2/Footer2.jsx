@@ -1,7 +1,7 @@
 import React from "react";
 import defaultLogo from "../assets/ideate.png"; // Import default logo
 
-const Footer = ({ logo }) => {
+const Footer2 = ({ logo }) => {
   return (
     <footer className="text-gray-600 body-font bg-gray-100 shadow-lg shadow-black w-full font-[Poppins]">
       <div className="container px-8 mx-auto flex flex-nowrap items-center justify-between py-4">
@@ -72,4 +72,4 @@ const Footer = ({ logo }) => {
   );
 };
 
-export default Footer;
+export default Footer2;
