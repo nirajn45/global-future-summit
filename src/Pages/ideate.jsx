@@ -1,3 +1,4 @@
+import React from "react";
 import About from "../components2/About";
 import PrizePool from "../components2/PrizePool";
 import Rules from "../components2/Rules";
@@ -5,14 +6,13 @@ import Hero from "../components2/Hero";
 import Theme from "../components2/Theme";
 import Footer2 from "../components2/Footer2";
 import Timeline from "../components2/Timeline";
-import NavBar2 from "../components2/Navbar2";
-// import Form from '../components2/Form'
+import Navbar2 from "../components2/Navbar2";
 
-export default function HomePage() {
+export default function Ideate() {
   return (
     <>
       {/* Navbar */}
-      <NavBar2 />
+      <Navbar2 />
 
       {/* Sections with IDs */}
       <section id="home">
@@ -41,9 +41,6 @@ export default function HomePage() {
 
       {/* Footer */}
       <Footer2 />
-
-      {/* Uncomment if form is needed */}
-      {/* <Form /> */}
     </>
   );
 }
