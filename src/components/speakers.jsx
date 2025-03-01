@@ -79,7 +79,7 @@ const speakersData = {
     {
       name: "Emily Davis",
       title: "CEO, InnovateHub",
-      photo: "https://m.media-amazon.com/images/M/MV5BOWUzNzIzMzQtNzMxYi00OWRiLTlhZjEtZTRjYWVkYzI4ZjMwXkEyXkFqcGc@.V1.jpg",
+      photo: "https://m.media-amazon.com/images/M/MV5BOWUzNzIzMzQtNzMxYi00OWRiLTlhZjEtZTRjYWVkYzI4ZjMwXkEyXkFqcGc@._V1_.jpg",
       bio: "Building the future of collaborative workspaces",
       social: {
         linkedin: "#",
@@ -162,7 +162,7 @@ const speakersData = {
     {
       name: "Kevin Park",
       title: "Cloud Architect, GDG Cloud",
-      photo: "https://m.media-amazon.com/images/M/MV5BYWYwYzYzMjUtNWE0MS00NmJlLTljNGMtNzliYjg5NzQ1OWY5XkEyXkFqcGc@.V1_FMjpg_UX1000.jpg",
+      photo: "https://m.media-amazon.com/images/M/MV5BYWYwYzYzMjUtNWE0MS00NmJlLTljNGMtNzliYjg5NzQ1OWY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
       bio: "Expert in cloud infrastructure and DevOps",
       social: {
         linkedin: "#",
@@ -297,7 +297,7 @@ export default function SpeakersSection() {
       <div className="absolute right-0 bottom-1/3 w-48 md:w-96 h-48 md:h-96 bg-cyan-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
       <div className="absolute left-1/4 bottom-1/4 w-24 md:w-48 h-24 md:h-48 bg-purple-200 rounded-full filter blur-3xl opacity-10 -z-10"></div>
 
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header section with animations */}
         <div className="text-center mb-8 md:mb-16">
           <motion.div
@@ -509,7 +509,7 @@ export default function SpeakersSection() {
                         <a
                           href={speaker.social.linkedin}
                           className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-100 flex items-center justify-center text-cyan-700 hover:bg-[#0B7798] hover:text-white transition-colors cursor-pointer"
-                          aria-label={`${speaker.name}'s LinkedIn profile}
+                          aria-label={`${speaker.name}'s LinkedIn profile`}
                         >
                           <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
                         </a>
@@ -519,7 +519,7 @@ export default function SpeakersSection() {
                         <a
                           href={speaker.social.instagram}
                           className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-100 flex items-center justify-center text-cyan-700 hover:bg-[#0B7798] hover:text-white transition-colors cursor-pointer"
-                          aria-label={${speaker.name}'s Instagram profile}
+                          aria-label={`${speaker.name}'s Instagram profile`}
                         >
                           <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
                         </a>
@@ -544,7 +544,7 @@ export default function SpeakersSection() {
               key={index}
               onClick={() => goToSlide(index)}
               className="group relative"
-              aria-label={Go to slide ${index + 1}}
+              aria-label={`Go to slide ${index + 1}`}
               aria-current={startIndex === index ? "true" : "false"}
             >
               <span

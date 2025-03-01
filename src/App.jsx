@@ -8,11 +8,11 @@ import Faq8 from "./components/faq";
 import ConsultingSection from "./components/TUCommunity"
 import GlobalFutureSummit from "./components/About";
 // import TimelineItem from "./components/timeline";
-// import SpeakersSection from "./components/speakers";
+import SpeakersSection from "./components/speakers";
 
 function App() {
   return (
-    <div className="font-[poppins] bg-white min-h-screen flex flex-col items-center justify-center">
+    <div className="font-[poppins] bg-white min-h-screen w-full flex flex-col items-center justify-center">
       <Navbar />
       <section id="home">
       <HeroSection />
@@ -26,8 +26,8 @@ function App() {
       <WhyAttend />
       </section>
       {/* <CollaboratorsSection/> */}
-      <section id="speakers">
-      {/* <SpeakersSection/> */}
+      <section className="w-[90%] mx-auto" id="speakers">
+      <SpeakersSection/>
       </section>
      <section id="contact">
       <ConsultingSection/>
