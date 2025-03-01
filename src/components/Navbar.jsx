@@ -24,7 +24,7 @@ const Navbar = () => {
     return (
         <>
             <div className={`fixed top-0 left-0 w-full h-16 md:h-24 flex justify-center font-[Poppins] transition-all duration-300 ease-in-out z-50 bg-white`}>
-                <div className="w-[90%] md:w-[85%] h-full flex justify-between items-center">
+                <div className="w-full md:w-[85%] h-full flex justify-between items-center">
                     <div className="flex items-center">
                         <img src={imgg} alt="Logo" className="w-32 md:w-54 mt-2 md:mt-4" />
                     </div>
@@ -64,7 +64,6 @@ const Navbar = () => {
                                 { label: 'Home', href: '#home' },
                                 { label: 'About', href: '#about' },
                                 { label: 'Objective', href: '#objective' },
-                                { label: 'Focus Area', href: '#focus-area' },
                                 { label: 'Contact Us', href: '#contact' }
                             ].map((item, index) => (
                                 <li key={index}>

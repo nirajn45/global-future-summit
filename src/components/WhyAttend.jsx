@@ -117,7 +117,7 @@ const WhyAttend = () => {
   return (
     <section className="ezy__portfolio10 w-full light py-14 md:py-24 bg-white dark:bg-white text-black dark:text-black">
       <div className="container px-4 mx-auto">
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-20">
           <div className="max-w-3xl text-center mx-auto">
             <h2 className="text-6xl font-bold  mb-6">
               Benefits of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
@@ -135,7 +135,7 @@ const WhyAttend = () => {
               <div className="flex flex-col md:flex-row h-full items-center">
                 <div className="h-full w-full md:w-1/2">
                   <div
-                    className="bg-center bg-cover h-full min-h-[200px] md:min-h-[250px]"
+                    className="bg-center  bg-contain bg-no-repeat h-full min-h-[200px] md:min-h-[250px]"
                     style={{
                         backgroundImage: `url(${connections})`,
                       }}
@@ -191,7 +191,7 @@ const WhyAttend = () => {
               <div className="flex flex-col md:flex-row h-full items-center">
                 <div className="h-full w-full md:w-1/2">
                   <div
-                    className="bg-center bg-cover h-full min-h-[200px] md:min-h-[250px]"
+                    className="bg-center bg-contain bg-no-repeat h-full min-h-[200px] md:min-h-[250px]"
                     style={{
                         backgroundImage: `url(${ideas})`,
                       }}

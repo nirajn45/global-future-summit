@@ -40,7 +40,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen min-w-screen flex items-center justify-center bg-black overflow-hidden">
+    <section id="home" className="relative min-h-screen min-w-screen flex items-center justify-center w-full bg-black overflow-hidden">
       <video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted playsInline>
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.

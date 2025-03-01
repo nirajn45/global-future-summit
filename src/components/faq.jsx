@@ -6,27 +6,27 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 const faqList = [
 	{
 		isActive: true,
-		question: "What is Easy Frontend?",
+		question: "Why should you attend the Global Future Summit?",
 		answer:
-			"When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
+			"Attending the Global Future Summit gives you the opportunity to connect with industry experts, gain insights into groundbreaking innovations, and participate in interactive discussions on shaping the future. Whether you're a student, professional, or entrepreneur, this summit provides valuable networking, learning, and career-building opportunities.",
 	},
 	{
 		isActive: false,
-		question: "Who is Easy Frontend for?",
+		question: "When is the Global Future Summit taking place?",
 		answer:
-			"When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
+			"The summit is scheduled for March 8th and will feature keynote speeches, panel discussions, and interactive sessions designed to inspire and empower attendees.",
 	},
 	{
 		isActive: false,
-		question: "How does Easy Frontend work?",
+		question: "Will I get a certificate for attending?",
 		answer:
-			"When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
+			"Yes! Participants will receive an official Certificate of Participation, which can be a great addition to your resume and professional portfolio.",
 	},
 	{
 		isActive: false,
-		question: "How often does your team upload resources?",
+		question: "What is the number of team members, including the team lead, for the Ideathon?",
 		answer:
-			"When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
+			"The Ideathon teams will consist of four members, including the team lead. Collaboration and teamwork will be essential in developing innovative solutions during the competition.",
 	},
 ];
 
@@ -70,10 +70,7 @@ const Faq8 = () => {
             FAQS
             </span>
 						<p className=" text-1xl.5 opacity-70">
-							Assumenda non repellendus distinctio nihil dicta sapiente,
-							quibusdam maiores, illum at, aliquid blanditiis eligendi
-							qui.Assumenda non repellendus distinctio nihil dicta sapiente,
-							quibusdam maiores
+						The Global Future Summit is a premier event that brings together visionaries, innovators, and leaders from various industries to discuss emerging trends, technological advancements, and sustainable solutions for the future. This summit provides a platform for networking, knowledge-sharing, and collaboration, helping individuals and teams accelerate their impact in the global landscape.
 						</p>
 
 					</div>

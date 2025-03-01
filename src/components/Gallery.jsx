@@ -11,14 +11,16 @@ const images = [
 
 const ImageGrid = () => {
   return (
-    <div className="w-screen h-screen mt-30 mb-20 flex flex-col items-center justify-center bg-white p-6">
+    <div className="w-full h-screen mt-30 mb-20 flex flex-col items-center justify-center bg-white p-6">
       
       {/* Header Section */}
-      <div className="text-center mb-8">
-        <h1 className="text-transparent text-4xl font-bold bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
-          Gallery
+      <div className="text-center flex flex-col items-center mb-8">
+        <h1 className="text-6xl font-bold bg-clip-text text-black">
+          Glimpses of  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
+           Global Future Summit 1.O
+          </span>
         </h1>
-        <p className="text-gray-600 text-lg mt-2 max-w-2xl">
+        <p className="text-gray-600 text-lg mt-2 max-w-2xl text-center">
           Explore our collection of stunning images capturing special moments and beautiful scenes.
         </p>
       </div>

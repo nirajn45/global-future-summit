@@ -1,76 +1,105 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { FaLightbulb, FaUsers, FaTools, FaChartLine } from "react-icons/fa"; // Importing React icons
-import Join from "../assets/workspace.png";
-import Unique from "../assets/theuniquesCommunity.png"; // Importing tu.png
+import { motion } from "framer-motion"; // For animations
+import { CheckCircleIcon, UsersIcon, DocumentTextIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
+import undrawImage from "../assets/register.png"; // Replace with your image path
 
-const stories = [
-    { text: "Innovation & Creativity", icon: FaLightbulb }, // Lightbulb for Innovation
-    { text: "Collaboration & Networking", icon: FaUsers }, // Users for Collaboration
-    { text: "Skill Development", icon: FaTools }, // Tools for Skill Development
-    { text: "Opportunities & Growth", icon: FaChartLine }, // Chart for Growth
-];
+const ConsultingSection = () => {
+  return (
+    <section className="relative container mx-auto py-20 px-6 lg:px-20">
+      {/* Triangle Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-[#025067] opacity-30 clip-triangle"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#025067] opacity-30 clip-triangle rotate-180"></div>
+      </div>
 
-const StoryItem = ({ item, index }) => {
-    const IconComponent = item.icon; // Extract the icon component
-    return (
-        <>
-            <div className="mb-4 flex items-center">
-                <IconComponent className="text-[#BA2027] mr-2 text-lg" /> {/* Red React Icon */}
-                <span className="opacity-75 text-sm">{item.text}</span>
-            </div>
-            {index !== stories.length - 1 && <hr className="w-11/12 my-2" />}
-        </>
-    );
+      <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+        
+        {/* Left Side (Text + Button) */}
+        <motion.div 
+  className="w-full lg:w-1/2 space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start"
+  initial={{ opacity: 0, x: -50 }} 
+  animate={{ opacity: 1, x: 0 }} 
+  transition={{ duration: 0.8 }}
+>
+  <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+    Join <span className="text-[#BA2027]">The Uniques Community</span>
+  </h2>
+  <p className="text-gray-600 text-lg">
+    An inclusive platform for <strong>innovation, collaboration, and skill development.</strong> 
+    Connect with like-minded individuals, learn new technologies, and grow together!
+  </p>
+
+
+          {/* Features List */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <FeatureItem 
+              icon={<UsersIcon className="w-8 h-8 text-[#025067]" />} 
+              text="Innovation & Creativity" 
+              tagline="Unlock new ideas & bring them to life!"
+            />
+            <FeatureItem 
+              icon={<ShieldCheckIcon className="w-8 h-8 text-[#025067]" />} 
+              text="Collaboration & Networking" 
+              tagline="Build strong connections & grow together."
+            />
+            <FeatureItem 
+              icon={<DocumentTextIcon className="w-8 h-8 text-[#025067]" />} 
+              text="Skill Development" 
+              tagline="Learn, upskill, and stay ahead of the curve."
+            />
+            <FeatureItem 
+              icon={<CheckCircleIcon className="w-8 h-8 text-[#025067]" />} 
+              text="Opportunities & Growth" 
+              tagline="Grab exciting opportunities for a bright future!"
+            />
+          </div>
+
+          {/* Button */}
+          <motion.a 
+            href="https://theuniques.in/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 mt-6 text-lg font-medium text-white bg-[#025067] rounded-xl shadow-lg hover:bg-red-700 transition"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Learn More
+          </motion.a>
+        </motion.div>
+
+        {/* Right Side (Image) */}
+        <motion.div 
+          className="w-full lg:w-1/2 flex justify-center relative"
+          initial={{ opacity: 0, x: 50 }} 
+          animate={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 0.8 }}
+        >
+          <img 
+            src={undrawImage} 
+            alt="Community" 
+            className="w-full max-w-md lg:max-w-xl rounded-xl "
+          />
+        </motion.div>
+
+      </div>
+    </section>
+  );
 };
 
-StoryItem.propTypes = {
-    item: PropTypes.object.isRequired,
-    index: PropTypes.number.isRequired,
+// Feature Item Component
+const FeatureItem = ({ icon, text, tagline }) => {
+  return (
+    <motion.div 
+      className="flex flex-col items-start gap-2 p-4 bg-white shadow-md rounded-lg"
+      whileHover={{ scale: 1.05 }}
+    >
+      <div className="flex items-center gap-3">
+        {icon}
+        <span className="text-lg font-medium text-gray-900">{text}</span>
+      </div>
+      <p className="text-sm text-gray-500 italic">{tagline}</p>
+    </motion.div>
+  );
 };
 
-const TUC = () => {
-    return (
-        <section className="ezy__about9 light py-14 px-30 md:py-24 bg-white dark:bg-white text-black dark:text-black">
-            <div className="container px-4">
-                <div className="grid grid-cols-12 items-center gap-4 mb-12">
-                    {/* Left Column */}
-                    <div className="col-span-12 lg:col-span-6">
-                        {/* Replacing the H1 heading with the tu.png image */}
-                        <img src={Unique} alt="The Uniques Community" className="w-36 h-auto mb-4" />
-                        
-                        <hr className="bg-[#025067] h-1 rounded-[3px] w-12 opacity-100 my-6" />
-                        <p className="opacity-70 mb-2">
-                            The Uniques Community is an inclusive platform for innovation, collaboration, and skill development, uniting passionate individuals to create, learn, and grow together.
-                        </p>
-                        <ul className="flex flex-col ezy__about9-features mt-5">
-                            {stories.map((item, i) => (
-                                <li key={i}>
-                                    <StoryItem item={item} index={i} />
-                                </li>
-                            ))}
-                        </ul>
-                        <div className="mt-12">
-                            <button className="bg-[#025067] text-white dark:bg-[#025067] dark:text-white hover:bg-opacity-90 rounded-md px-5 py-2 transition">
-                                <a href="https://theuniques.in/">Learn More</a>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    {/* Right Column */}
-                    <div className="col-span-12 lg:col-span-6">
-                        <div className="mt-12 lg:mt-0">
-                            <img
-                                src={Join}
-                                alt="About Us"
-                                className="max-w-full h-auto rounded-2xl"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
-
-export default TUC;
+export default ConsultingSection;

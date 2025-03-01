@@ -1,75 +1,61 @@
-import React from "react";
+import { motion } from "framer-motion";
+import "./timeline.css";
 
-const Timeline = () => {
-  const steps = [
-    {
-      id: "01",
-      title: "Inauguration",
-      description:
-        "10:00 AM - 11:00 AM ",
-      align: "left",
-    },
-    {
-      id: "02",
-      title: "Industrialist Discussion ",
-      description:
-        "11:00 AM - 12:00 PM ",
-      align: "right",
-    },
-    {
-      id: "03",
-      title: "Top 5 teams presentation",
-      description:
-        "12:00 PM - 01:00 PM  ",
-      align: "left",
-    },
+// Define timeline events
+const timelineEvents = [
+  { time: "9 AM", title: "Orientation", description: "Welcome session with HR, paperwork, and company policies.", icon: "🏢" },
+  { time: "10 AM", title: "HR Panel", description: "Introduction to team members and workspace.", icon: "🎓" },
+  { time: "11 AM", title: "Industry Panel", description: "Discuss role, responsibilities, and expectations.", icon: "👨‍💼" },
+  { time: "12 PM", title: "Lunch", description: "Enjoy a welcome lunch with your team.", icon: "🍔" },
+  { time: "1 PM", title: "Presentation", description: "Observe and learn from an experienced team member.", icon: "🔍" },
+  { time: "3 PM", title: "Award", description: "Discuss your first impressions and set goals.", icon: "📋" },
+  { time: "5 PM", title: "Vote of Thanks", description: "Wrap up and reflect on your first day.", icon: "🌿" },
+];
 
-    {
-        id: "04",
-        title: "HR Panel Discussion ",
-        description:
-          "01:00 PM - 02:00 PM ",
-        align: "right",
-      }
-  ];
-
+// Timeline item component
+const TimelineItem = ({ time, title, description, icon }) => {
   return (
-    <div className="max-w-3xl mt-20 mb-40 mx-auto p-4 w-full text-center">
-      <h2 className="text-6xl font-semibold mb-8">Time<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0b7797] to-[#16a3cc]">
-            Line
-            </span></h2> 
-      <div className="relative">
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-gray-400 top-10 bottom-10"></div>
-        {steps.map((step, index) => (
-          <div key={step.id} className="flex items-center w-full mb-8 relative">
-            <div className="w-1/2 text-right pr-4">
-              {step.align === "left" && (
-                <>
-                  <h3 className="text-lg font-bold text-[#025067]">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
-                </>
-              )}
-            </div>
-            <div className="relative w-1/12 flex flex-col items-center">
-              <div className="w-10 h-10 bg-white border-2 border-gray-400 text-gray-700 font-bold rounded-full flex items-center justify-center">
-                {step.id}
-              </div>
-            </div>
-            <div className="w-1/2 text-left pl-4">
-              {step.align === "right" && (
-                <>
-                  <h3 className="text-lg text-2xl justify-center font-bold text-[#025067]">{step.title}</h3>
-                  <p className="text-gray-600 text-1.5xl">{step.description}</p>
-                </>
-              )}
-            </div>
-          </div>
-        ))}
-        <div className="text-center text-2xl font-bold text-gray-700 mt-4">END</div>
+    <motion.div
+      className="timeline-item relative p-4 mb-4 bg-white rounded-lg shadow-md"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {/* Icon placed in the corner */}
+      <div className="absolute top-4 right-4 text-2xl">{icon}</div>
+
+      {/* Timeline content */}
+      <div className="timeline-content">
+        <h3 className="time font-semibold text-lg">{time}</h3>
+        <h4 className="title font-bold text-xl mb-2">{title}</h4>
+        <p className="description text-gray-600">{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default Timeline;
+// Main App component
+function App() {
+  return (
+    <div className="timeline-container relative">
+      {/* Earth Background */}
+      <div
+        className="earth-background absolute inset-0 bg-no-repeat bg-center bg-cover opacity-10"
+        style={{
+          backgroundImage: 'url("https://png.pngtree.com/png-vector/20230904/ourmid/pngtree-white-globe-png-image_9977343.png")',
+        }}
+      ></div>
 
+      <h1 className="timeline-title font-bold text-3xl text-center relative z-10">Event Timeline</h1>
+
+      <div className="timeline relative z-10">
+        {timelineEvents.map((event, index) => (
+          <TimelineItem key={index} {...event} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
