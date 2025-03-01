@@ -4,7 +4,7 @@ import imgg from "../assets/ideate.png";
 import { Link } from "react-router-dom";
 // import img2 from "../assets/Image.jpg";
 
-const Navbar = () => {
+const Navbar2  = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -69,8 +69,8 @@ const Navbar = () => {
 
           {/* Desktop Button and Mobile Menu Toggle */}
           <div className="flex items-center">
-            <button className="px-4 md:px-8 hidden lg:flex cursor-pointer py-2 text-white font-medium text-lg bg-[#4285F4] hover:bg-[#357ABD] transition-all rounded-lg">
-                <a href="https://gdg.community.dev/events/details/google-gdg-on-campus-swami-vivekanand-institute-of-engineering-technology-chandigarh-india-presents-google-ideate-20-student-innovation-challenge-2025/" target="blank">Do RSVP</a>
+            <button className="px-4 md:px-8 hidden lg:flex cursor-pointer py-2 text-white font-medium text-lg bg-[#4285F4] hover:bg-[#155DFC] transition-all rounded-lg">
+                <a href="https://gdg.community.dev/events/details/google-gdg-on-campus-swami-vivekanand-institute-of-engineering-technology-chandigarh-india-presents-google-ideate-20-student-innovation-challenge-2025/" target="blank">RSVP Now</a>
             </button>
             <div
               className={`rounded-full ${

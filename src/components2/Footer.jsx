@@ -61,7 +61,7 @@ const Footer = ({ logo }) => {
       </div>
 
       {/* Bottom Footer Text */}
-      <div className="bg-[#025067] text-white py-4">
+      <div className="bg-[#4285F4] text-white py-4">
         <div className="container mx-auto flex flex-col items-center">
           <p className="text-sm text-white text-center">
             @ 2025, All rights reserved by The Uniques Community
